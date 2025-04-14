@@ -1,0 +1,17 @@
+[build]
+  command = "cd client && npm run build"
+  publish = "client/build"
+
+[build.environment]
+  REACT_APP_API_URL = "https://youtube-clone-backend.onrender.com"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://youtube-clone-backend.onrender.com/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
